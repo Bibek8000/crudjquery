@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>Task Master</h1>
+        <p>Manage your daily activities</p>
+      </header>
+
+      <main>
+        <section class="form-section">
+          <form id="task-form">
+            <input type="hidden" id="task-id" />
+            <div class="input-group">
+              <input
+                type="text"
+                id="task-title"
+                placeholder="Task Title"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <textarea
+                id="task-desc"
+                placeholder="Task Description..."
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="input-group">
+              <select id="task-status">
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <button type="submit" id="save-btn" class="btn primary-btn">
+              Add Task
+            </button>
+            <button
+              type="button"
+              id="cancel-btn"
+              class="btn secondary-btn"
+              style="display: none"
+            >
+              Cancel Edit
+            </button>
+          </form>
+        </section>
+
+        <section class="list-section">
+          <div class="list-header">
+            <h2>Your Tasks</h2>
+            <span class="task-count">0 Tasks</span>
+          </div>
+          <div id="task-list" class="task-list">
+            <!-- Tasks will be rendered here by jQuery -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
